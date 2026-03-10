@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lorentz Force Diagram</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/style.css" />
+    <!-- MathJax for rendering LaTeX-style math in the header text -->
+    <script>
+      window.MathJax = {
+        tex: { inlineMath: [["\\(", "\\)"], ["$", "$"]] },
+        svg: { fontCache: "global" },
+      };
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+      id="MathJax-script"
+      async
+    ></script>
+  </head>
+  <body>
+    <div id="app">
+      <div id="info-panel">
+        <div class="info-main">
+          <h2>Lorentz Force \( \mathbf{F} = q\,\mathbf{v} \times \mathbf{B} \)</h2>
+          <p>
+            Drag the <span class="v-color">velocity</span>,
+            <span class="b-color">magnetic field</span> or
+            <span class="f-color">force</span> arrow tips to explore how
+            \( \mathbf{F}, \mathbf{v}, \mathbf{B} \) relate.
+          </p>
+          <div id="magnitudes">
+            <span class="mag mag-v">
+              |v| = <span id="v-mag">0.00</span>
+            </span>
+            <span class="mag mag-b">
+              |B| = <span id="b-mag">0.00</span>
+            </span>
+            <span class="mag mag-f">
+              |F| = <span id="f-mag">0.00</span>
+            </span>
+          </div>
+        </div>
+        <button id="reset-btn" type="button">Reset vectors</button>
+      </div>
+      <canvas id="three-canvas"></canvas>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+  </html>
+
